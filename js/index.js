@@ -88,7 +88,7 @@
 // }(1,2)
 
 
-const arr = [1,2,3,4,5];
+// const arr = [1,2,3,4,5];
 // for(let i = 0;i<arr.length;i++){
 //     console.log(i)
 // }
@@ -107,60 +107,119 @@ const arr = [1,2,3,4,5];
 // console.log(output)
 
 // 1. Validate order structure
-function validateOrder(order) {
-  return new Promise((resolve, reject) => {
-    if (!order.customerId) {
-      reject(new Error('Customer ID is required'));
-    } else if (!order.items || order.items.length === 0) {
-      reject(new Error('Order must contain items'));
-    } else {
-      console.log('✅ Order validated');
-      resolve(order);
-    }
-  });
+// function validateOrder(order) {
+//   return new Promise((resolve, reject) => {
+//     if (!order.customerId) {
+//       reject(new Error('Customer ID is required'));
+//     } else if (!order.items || order.items.length === 0) {
+//       reject(new Error('Order must contain items'));
+//     } else {
+//       console.log('✅ Order validated');
+//       resolve(order);
+//     }
+//   });
+// }
+
+// // 2. Check inventory availability
+// function checkInventory(order) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('📦 Inventory checked');
+//       order.inventoryVerified = true;
+//       resolve(order);
+//     }, 800);
+//   });
+// }
+
+// // 3. Process payment
+// function processPayment(order) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const paymentSuccess = Math.random() > 0.2; // 80% success rate
+//       if (paymentSuccess) {
+//         console.log('💳 Payment processed');
+//         order.paymentStatus = 'completed';
+//         resolve(order);
+//       } else {
+//         reject(new Error('Payment declined'));
+//       }
+//     }, 1200);
+//   });
+// }
+
+// // Execute the pipeline
+// validateOrder({
+//   customerId: 'cust789',
+//   items: [{ id: 'prod456', qty: 1 }]
+// })
+// .then(checkInventory)
+// .then(processPayment)
+// .then(order => {
+//   console.log('🎉 Order completed:', order);
+// })
+// .catch(err => {
+//   console.error('❌ Order failed:', err.message);
+// });
+
+
+// const a = [1,2,3,4,5]
+// const b = [...a]
+// console.log(b)
+
+// const a = [1,2,3]
+// const b = [4,5]
+// const c = [...a,...b,6,7]
+// console.log(c)
+
+
+// function greet(a,b,c){
+//   return a+b+c
+// }
+// const a = [1,2,3]
+// console.log(greet(...a))
+
+// const obj = {
+//   name:"adam"
+// }
+// const newObj = {...obj,age:25}
+// console.log(newObj)
+
+
+//rest operator
+// const a = [1,2,3,4,5]
+// const [first,second,...b ] = a
+// console.log(first)
+// console.log(second)
+// console.log(b)
+
+
+// const a = {
+//     name:"adam",
+//     age:39
+// }
+
+// const {name,...remain} = a
+// console.log(name)
+// console.log(remain)
+
+
+// function greet(...rest){
+//     return rest.reduce((curr,acc)=>curr+acc,0)
+// }
+
+// console.log(greet(1,2,3))
+
+
+// a = [1,2,3]
+// b= [...a,4]
+// console.log(a)
+
+
+const a = {
+    name:"adam",
+    address:{age:26}
 }
-
-// 2. Check inventory availability
-function checkInventory(order) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      console.log('📦 Inventory checked');
-      order.inventoryVerified = true;
-      resolve(order);
-    }, 800);
-  });
-}
-
-// 3. Process payment
-function processPayment(order) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const paymentSuccess = Math.random() > 0.2; // 80% success rate
-      if (paymentSuccess) {
-        console.log('💳 Payment processed');
-        order.paymentStatus = 'completed';
-        resolve(order);
-      } else {
-        reject(new Error('Payment declined'));
-      }
-    }, 1200);
-  });
-}
-
-// Execute the pipeline
-validateOrder({
-  customerId: 'cust789',
-  items: [{ id: 'prod456', qty: 1 }]
-})
-.then(checkInventory)
-.then(processPayment)
-.then(order => {
-  console.log('🎉 Order completed:', order);
-})
-.catch(err => {
-  console.error('❌ Order failed:', err.message);
-});
-
-
-
-
+const b = {...a}
+console.log(b)
+b.address.age=45
+console.log(a.address.age)
