@@ -11,6 +11,9 @@ function NavScrollExample() {
     const handleClick = ()=>{
         navigate('/about')
     }
+    const handleDashboard = ()=>{
+        navigate('/dashboard')
+    }
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container fluid>
@@ -23,6 +26,7 @@ function NavScrollExample() {
                         navbarScroll
                     >
                         <Link to='/'>Home</Link>
+                        <button className='btn btn-outline-dark btn-light' onClick={handleDashboard}>Dashboard</button>
                         <button className='btn btn-outline-dark btn-light' onClick={handleClick}>About</button>
                         <Link to='/skills'>Skills</Link>
                         <Link to='/projects'>Project</Link>
