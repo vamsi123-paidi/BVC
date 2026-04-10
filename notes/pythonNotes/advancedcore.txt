@@ -1,0 +1,582 @@
+🐍 Python – Advanced Core (Completion Layer)
+
+---
+
+🔁 1. Iterators
+
+📖 Definition
+
+An iterator is an object that allows you to traverse (loop through) elements one by one
+
+---
+
+🧠 Core Concept
+
+* Uses:
+
+  * `__iter__()` → initializes iterator
+  * `__next__()` → gives next value
+
+---
+
+📌 Example
+
+python
+arr = [10, 20, 30]
+
+it = iter(arr)
+
+print(next(it))
+print(next(it))
+print(next(it))
+
+
+---
+
+📤 Output
+
+
+10
+20
+30
+
+
+---
+
+🧠 Important Insight
+
+👉 `for loop` internally uses iterators
+
+---
+
+🌍 Real-World Use
+
+* Reading large files line by line
+* Streaming data
+
+---
+
+🧪 Practice Tasks
+
+1. Create iterator from list
+2. Use `next()` manually
+3. Try one extra `next()` → observe error
+
+---
+
+⚡ 2. Generators
+
+---
+
+📖 Definition
+
+Generators are functions that yield values one at a time instead of returning all at once
+
+---
+
+🧠 Why Generators?
+
+* Save memory
+* Efficient for large data
+
+---
+
+📌 Example
+
+python
+def count(n):
+    for i in range(n):
+        yield i
+
+g = count(3)
+
+print(next(g))
+print(next(g))
+print(next(g))
+
+
+---
+
+📤 Output
+
+
+0
+1
+2
+
+
+---
+
+🧠 Difference
+
+| Return        | Yield           |
+| ------------- | --------------- |
+| Ends function | Pauses function |
+| Returns all   | One by one      |
+
+---
+
+🌍 Real-World Use
+
+* Large datasets
+* Pagination
+* File processing
+
+---
+
+🧪 Practice Tasks
+
+1. Create generator for squares
+2. Print values using loop
+3. Compare with list
+
+---
+
+🎭 3. Decorators
+
+---
+
+📖 Definition
+
+A decorator is a function that modifies another function without changing its code
+
+---
+
+🧠 Core Idea
+
+👉 “Wrap a function with extra behavior”
+
+---
+
+📌 Example
+
+python
+def my_decorator(func):
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello")
+
+say_hello()
+
+
+---
+
+📤 Output
+
+
+Before
+Hello
+After
+
+
+---
+
+🌍 Real-World Use
+
+* Logging
+* Authentication
+* Performance tracking
+
+---
+
+🧪 Practice Tasks
+
+1. Create decorator for logging
+2. Add message before function runs
+3. Wrap multiple functions
+
+---
+
+🔧 4. Advanced Built-in Functions
+
+---
+
+🔹 zip()
+
+python
+names = ["A", "B"]
+marks = [90, 80]
+
+print(list(zip(names, marks)))
+
+
+#📤 Output
+
+
+[('A', 90), ('B', 80)]
+
+
+---
+
+🔹 enumerate()
+
+python
+arr = ["a", "b"]
+
+for i, v in enumerate(arr):
+    print(i, v)
+
+
+#📤 Output
+
+
+0 a
+1 b
+
+
+---
+
+🔹 sorted()
+
+python
+arr = [3, 1, 2]
+print(sorted(arr))
+
+
+#📤 Output
+
+
+[1, 2, 3]
+
+
+---
+
+🔹 any() / all()
+
+python
+print(any([True, False]))
+print(all([True, False]))
+
+
+#📤 Output
+
+
+True
+False
+
+
+---
+
+🌍 Real Use
+
+* Data processing
+* Index tracking
+* Validation
+
+---
+
+🧪 Practice Tasks
+
+1. Combine two lists using zip
+2. Print index using enumerate
+3. Sort list
+
+---
+
+📦 5. Modules Deep Dive
+
+---
+
+📖 Definition
+
+Modules are files containing reusable code
+
+---
+
+📌 Example
+
+python
+import math
+
+print(math.sqrt(25))
+
+
+---
+
+📤 Output
+
+
+5.0
+
+
+---
+
+🔹 name Concept
+
+python
+if __name__ == "__main__":
+    print("Run directly")
+
+
+---
+
+🧠 Meaning
+
+👉 Runs only when file is executed directly
+
+---
+
+🌍 Real Use
+
+* Prevent unwanted execution
+* Used in large projects
+
+---
+
+🧪 Practice Tasks
+
+1. Use math module
+2. Create custom module
+3. Use name
+
+---
+
+🌐 6. JSON Handling
+
+---
+
+📖 Definition
+
+JSON is used to store and exchange data
+
+---
+
+📌 Example
+
+python
+import json
+
+data = {"name": "Vamsi"}
+
+json_str = json.dumps(data)
+print(json_str)
+
+
+---
+
+📤 Output
+
+
+{"name": "Vamsi"}
+
+
+---
+
+🔹 Load JSON
+
+python
+json_obj = json.loads(json_str)
+print(json_obj["name"])
+
+
+---
+
+📤 Output
+
+
+Vamsi
+
+
+---
+
+🌍 Real Use
+
+* APIs
+* Data storage
+* Config files
+
+---
+
+🧪 Practice Tasks
+
+1. Convert dict to JSON
+2. Convert JSON to dict
+3. Store JSON in file
+
+---
+
+🖥️ 7. OS Module
+
+---
+
+📖 Definition
+
+Used to interact with operating system
+
+---
+
+📌 Example
+
+python
+import os
+
+print(os.getcwd())
+
+
+---
+
+📤 Output (example)
+
+
+C:\Users\...
+
+
+---
+
+🔹 File Operations
+
+python
+os.mkdir("test")
+
+
+---
+
+🌍 Real Use
+
+* File management
+* Automation
+
+---
+
+🧪 Practice Tasks
+
+1. Get current directory
+2. Create folder
+3. List files
+
+---
+
+🎲 8. Random Module
+
+---
+
+📌 Example
+
+python
+import random
+
+print(random.randint(1, 10))
+
+
+---
+
+📤 Output (example)
+
+
+7
+
+
+---
+
+🌍 Real Use
+
+* Games
+* OTP generation
+
+---
+
+🧪 Practice Tasks
+
+1. Generate random number
+2. Pick random element
+
+---
+
+📅 9. Datetime Module
+
+---
+
+📌 Example
+
+python
+from datetime import datetime
+
+print(datetime.now())
+
+
+---
+
+📤 Output (example)
+
+
+2026-04-06 10:30:00
+
+
+---
+
+🌍 Real Use
+
+* Timestamps
+* Logs
+
+---
+
+🧪 Practice Tasks
+
+1. Print current date
+2. Format date
+
+---
+
+💻 10. Command Line Arguments
+
+---
+
+📌 Example
+
+python
+import sys
+
+print(sys.argv)
+
+
+---
+
+📤 Output
+
+
+['file.py', 'arg1', 'arg2']
+
+
+---
+
+🌍 Real Use
+
+* Automation scripts
+* CLI tools
+
+---
+
+🧪 Practice Tasks
+
+1. Pass arguments
+2. Print arguments
+
+---
+
+🎯 Final Mini Project (Completion)
+
+📌 Task: File Analyzer Tool
+
+Features:
+
+* Read file
+* Count words
+* Use generator
+* Handle errors
+* Save result in JSON
+
+---
+
+🧠 Final Outcome
+
+✔ 100% Core Python Covered
+✔ Real-world understanding
+✔ Ready for projects & interviews
+✔ Trainer-level mastery

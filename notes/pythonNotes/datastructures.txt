@@ -1,0 +1,448 @@
+🐍 Python – Day 2 (Data Structures + Real Usage)
+
+---
+
+📦 1. Introduction to Data Structures
+
+📖 Definition
+
+Data structures are used to store, organize, and manage data efficiently
+
+---
+
+🧠 Why Needed
+
+When working with multiple values, using separate variables becomes messy
+
+❌ Bad approach:
+
+python
+a = 10
+b = 20
+c = 30
+
+
+✅ Better approach:
+
+python
+arr = [10, 20, 30]
+
+
+---
+
+⚡ Types Covered Today
+
+* List
+* Tuple
+* Set
+* Dictionary
+
+---
+
+🧪 Practice Tasks
+
+1. Write 5 variables vs 1 list → observe difference
+2. Think of real-life example where multiple values are needed
+
+---
+
+📋 2. Lists (Most Important)
+
+📖 Definition
+
+A list is a collection of ordered, mutable (changeable) elements
+
+---
+
+🧠 Key Characteristics
+
+* Ordered → index-based
+* Mutable → can change values
+* Allows duplicates
+
+---
+
+📌 Creating a List
+
+python
+arr = [10, 20, 30, 40]
+
+
+---
+
+🔍 Accessing Elements
+
+python
+print(arr[0])   10
+print(arr[2])   30
+
+
+---
+
+✏️ Modifying List
+
+python
+arr[1] = 50
+
+
+---
+
+➕ Adding Elements
+
+python
+arr.append(60)
+
+
+---
+
+➖ Removing Elements
+
+python
+arr.remove(20)
+
+
+---
+
+🔁 Looping Through List
+
+python
+for i in arr:
+    print(i)
+
+
+---
+
+🧠 Real-World Use
+
+* Storing product list
+* User data
+* Movie list (your project 🔥)
+
+---
+
+🧪 Practice Tasks
+
+1. Create a list of 5 numbers
+2. Print first and last element
+3. Add a new element
+4. Remove one element
+5. Loop and print all values
+
+---
+
+🔒 3. Tuples
+
+📖 Definition
+
+A tuple is a collection of ordered, immutable elements
+
+---
+
+🧠 Key Difference from List
+
+* Cannot modify after creation
+
+---
+
+📌 Example
+
+python
+t = (10, 20, 30)
+
+
+---
+
+🔍 Access
+
+python
+print(t[1])
+
+
+---
+
+⚠️ Not Allowed
+
+python
+t[1] = 50   Error
+
+
+---
+
+🧠 Real-World Use
+
+* Fixed data (coordinates, config)
+* Data that should not change
+
+---
+
+🧪 Practice Tasks
+
+1. Create a tuple
+2. Access elements
+3. Try modifying → observe error
+
+---
+
+🔁 4. Sets
+
+📖 Definition
+
+A set is a collection of unordered, unique elements
+
+---
+
+🧠 Key Characteristics
+
+* No duplicates
+* No indexing
+* Unordered
+
+---
+
+📌 Example
+
+python
+s = {1, 2, 3, 3, 4}
+print(s)   duplicates removed
+
+
+---
+
+➕ Add Element
+
+python
+s.add(5)
+
+
+---
+
+➖ Remove Element
+
+python
+s.remove(2)
+
+
+---
+
+🧠 Real-World Use
+
+* Removing duplicates
+* Unique data handling
+
+---
+
+🧪 Practice Tasks
+
+1. Create set with duplicate values
+2. Add and remove elements
+3. Try accessing with index → observe error
+
+---
+
+🗂️ 5. Dictionaries (VERY IMPORTANT)
+
+📖 Definition
+
+A dictionary stores data in key-value pairs
+
+---
+
+🧠 Think Like JS Object
+
+python
+student = {
+    "name": "Vamsi",
+    "age": 22
+}
+
+
+---
+
+🔍 Access Values
+
+python
+print(student["name"])
+
+
+---
+
+✏️ Modify
+
+python
+student["age"] = 23
+
+
+---
+
+➕ Add New Key
+
+python
+student["city"] = "Vijayawada"
+
+
+---
+
+🔁 Loop
+
+python
+for key in student:
+    print(key, student[key])
+
+
+---
+
+🧠 Real-World Use
+
+* User profiles
+* API responses
+* Config data
+
+---
+
+🧪 Practice Tasks
+
+1. Create student dictionary
+2. Add new field
+3. Update value
+4. Loop and print all
+
+---
+
+⚡ 6. List Comprehension (🔥 Important)
+
+📖 Definition
+
+A short way to create lists
+
+---
+
+🧠 Normal Way
+
+python
+arr = [1, 2, 3]
+new = []
+
+for i in arr:
+    new.append(i * 2)
+
+
+---
+
+⚡ Python Way
+
+python
+new = [i * 2 for i in arr]
+
+
+---
+
+🧠 Why Important
+
+* Cleaner
+* Faster
+* Used in real projects
+
+---
+
+🧪 Practice Tasks
+
+1. Square all numbers
+2. Filter even numbers
+3. Multiply list values
+
+---
+
+🔍 7. Indexing & Slicing
+
+📖 Definition
+
+Accessing parts of data
+
+---
+
+📌 Example
+
+python
+arr = [10, 20, 30, 40, 50]
+
+print(arr[1:4])   20, 30, 40
+
+
+---
+
+🧠 Concept
+
+* Start index included
+* End index excluded
+
+---
+
+🧪 Practice Tasks
+
+1. Print first 3 elements
+2. Print last 2 elements
+3. Reverse list
+
+---
+
+🧩 8. Nested Data Structures
+
+📖 Definition
+
+Data inside data
+
+---
+
+Example
+
+python
+students = [
+    {"name": "A", "age": 20},
+    {"name": "B", "age": 22}
+]
+
+
+---
+
+🧠 Real Use
+
+* API data
+* Complex applications
+
+---
+
+🧪 Practice Tasks
+
+1. Create list of dictionaries
+2. Print all names
+3. Access specific value
+
+---
+
+🎯 9. Mini Practice Project (End of Day)
+
+📌 Task: Student Management System (Basic)
+
+Features:
+
+* Store student names in list
+* Store details in dictionary
+* Add new student
+* Display all students
+
+---
+
+🧠 Outcome
+
+* Understand data storage
+* Combine concepts
+* Build logic
+
+---
+
+🚀 End of Day 2 Outcome
+
+✔ Strong understanding of data structures
+✔ Ability to store and manage data
+✔ Ready for real-world problems
+✔ Foundation for advanced topics

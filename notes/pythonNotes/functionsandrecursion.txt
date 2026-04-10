@@ -1,0 +1,451 @@
+🐍 Python – Day 4 (Functions Deep Dive + Recursion + Lambda + Modules)
+
+---
+
+🔧 1. Functions (Deep Dive)
+
+📖 Definition
+
+A function is a block of reusable code that performs a specific task
+
+---
+
+🧠 Why Functions Are Important
+
+* Avoid repetition
+* Improve readability
+* Break large problems into smaller parts
+
+---
+
+📌 Basic Syntax
+
+python
+def greet():
+    print("Hello")
+
+
+👉 Calling function:
+
+python
+greet()
+
+
+---
+
+🧠 Key Concept
+
+👉 Function is only executed when called
+
+---
+
+🧪 Practice Tasks
+
+1. Create function to print your name
+2. Create function to print numbers 1–10
+
+---
+
+🔁 2. Functions with Parameters
+
+📖 Definition
+
+Parameters are inputs passed to a function
+
+---
+
+Example
+
+python
+def greet(name):
+    print(f"Hello {name}")
+
+
+---
+
+🧠 Understanding
+
+* `name` → parameter
+* Value passed → argument
+
+---
+
+🧪 Practice Tasks
+
+1. Function to add two numbers
+2. Function to print student details
+
+---
+
+🔙 3. Return Statement
+
+📖 Definition
+
+Used to send value back from function
+
+---
+
+Example
+
+python
+def add(a, b):
+    return a + b
+
+result = add(2, 3)
+print(result)
+
+
+---
+
+🧠 Important Insight
+
+👉 `return` ends function execution
+
+---
+
+🧪 Practice Tasks
+
+1. Return square of a number
+2. Return largest of two numbers
+
+---
+
+⚙️ 4. Types of Functions
+
+---
+
+🔹 Without Parameters, Without Return
+
+python
+def show():
+    print("Hello")
+
+
+---
+
+🔹 With Parameters, Without Return
+
+python
+def show(name):
+    print(name)
+
+
+---
+
+🔹 With Parameters and Return
+
+python
+def add(a, b):
+    return a + b
+
+
+---
+
+🧪 Practice Tasks
+
+1. Create all 3 types of functions
+2. Identify type for each
+
+---
+
+🎯 5. Default Parameters
+
+📖 Definition
+
+Assign default values to parameters
+
+---
+
+Example
+
+python
+def greet(name="User"):
+    print(f"Hello {name}")
+
+
+---
+
+🧠 Benefit
+
+👉 Function works even if no argument is passed
+
+---
+
+🧪 Practice Tasks
+
+1. Create function with default age
+2. Call function with and without argument
+
+---
+
+🔄 6. *args and kwargs (Advanced)
+
+---
+
+🔹 *args (Multiple Values)
+
+python
+def add(*numbers):
+    print(sum(numbers))
+
+
+---
+
+🔹 kwargs (Key-Value)
+
+python
+def show(data):
+    print(data)
+
+
+---
+
+🧠 Real Use
+
+* Flexible inputs
+* API data handling
+
+---
+
+🧪 Practice Tasks
+
+1. Sum multiple numbers using *args
+2. Store user details using kwargs
+
+---
+
+🔁 7. Recursion
+
+📖 Definition
+
+A function calling itself
+
+---
+
+Example
+
+python
+def count(n):
+    if n == 0:
+        return
+    print(n)
+    count(n - 1)
+
+
+---
+
+🧠 Important Concept
+
+👉 Must have base condition
+
+---
+
+⚠️ Without base condition → infinite loop
+
+---
+
+🧪 Practice Tasks
+
+1. Print numbers using recursion
+2. Factorial using recursion
+
+---
+
+⚡ 8. Lambda Functions
+
+📖 Definition
+
+Anonymous (one-line) functions
+
+---
+
+Example
+
+python
+add = lambda a, b: a + b
+print(add(2, 3))
+
+
+---
+
+🧠 Use Case
+
+* Short operations
+* Used with map/filter
+
+---
+
+🧪 Practice Tasks
+
+1. Multiply two numbers using lambda
+2. Use lambda with list
+
+---
+
+🔄 9. Map, Filter, Reduce
+
+---
+
+🔹 Map
+
+python
+arr = [1, 2, 3]
+result = list(map(lambda x: x * 2, arr))
+
+
+---
+
+🔹 Filter
+
+python
+result = list(filter(lambda x: x % 2 == 0, arr))
+
+
+---
+
+🔹 Reduce
+
+python
+from functools import reduce
+
+result = reduce(lambda a, b: a + b, arr)
+
+
+---
+
+🧠 Real Use
+
+* Data processing
+* Transformations
+
+---
+
+🧪 Practice Tasks
+
+1. Double list using map
+2. Filter even numbers
+3. Sum list using reduce
+
+---
+
+📦 10. Modules
+
+📖 Definition
+
+A file containing Python code (functions, variables)
+
+---
+
+📌 Import Module
+
+python
+import math
+
+print(math.sqrt(16))
+
+
+---
+
+🧠 Why Modules
+
+* Code reuse
+* Organized structure
+
+---
+
+🔹 Custom Module
+
+File: `myfile.py`
+
+python
+def greet():
+    print("Hello")
+
+
+Use:
+
+python
+import myfile
+myfile.greet()
+
+
+---
+
+🧪 Practice Tasks
+
+1. Use math module
+2. Create your own module
+3. Import and use function
+
+---
+
+🧠 11. Scope (Very Important)
+
+---
+
+🔹 Local Scope
+
+Inside function
+
+🔹 Global Scope
+
+Outside function
+
+---
+
+Example
+
+python
+x = 10
+
+def test():
+    x = 5
+    print(x)
+
+test()
+print(x)
+
+
+---
+
+🧠 Insight
+
+👉 Local and global are different
+
+---
+
+🧪 Practice Tasks
+
+1. Create local and global variables
+2. Modify global variable
+
+---
+
+🎯 12. Mini Project (End of Day)
+
+📌 Task: Calculator with Functions
+
+Features:
+
+* Add
+* Subtract
+* Multiply
+* Divide
+* Use functions for each operation
+
+---
+
+🧠 Outcome
+
+* Strong function understanding
+* Code organization
+* Logic building
+
+---
+
+🚀 End of Day 4 Outcome
+
+✔ Deep understanding of functions
+✔ Able to write reusable code
+✔ Understand recursion & lambda
+✔ Ready for file handling + OOP

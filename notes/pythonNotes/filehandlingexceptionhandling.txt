@@ -1,0 +1,419 @@
+🐍 Python – Day 5 (File Handling + Exception Handling)
+
+---
+
+📂 1. File Handling
+
+📖 Definition
+
+File handling is used to store and retrieve data from files permanently
+
+---
+
+🧠 Why File Handling?
+
+* Variables → temporary (lost after program ends)
+* Files → permanent storage
+
+👉 Example:
+Saving user details, logs, reports
+
+---
+
+📌 Types of Files
+
+* Text files (`.txt`)
+* CSV files (`.csv`)
+* JSON files (`.json`)
+
+---
+
+🧪 Practice Tasks
+
+1. Think of 3 real-life cases where data must be saved
+2. Identify which type of file can be used
+
+---
+
+⚙️ 2. Opening a File
+
+📖 Syntax
+
+python id="e01cqp"
+file = open("test.txt", "r")
+
+
+---
+
+🧠 Parameters
+
+* `"test.txt"` → file name
+* `"r"` → mode
+
+---
+
+🔹 File Modes
+
+| Mode | Meaning           |
+| ---- | ----------------- |
+| r    | Read              |
+| w    | Write (overwrite) |
+| a    | Append            |
+| x    | Create new file   |
+
+---
+
+🧠 Important Insight
+
+👉 If file doesn’t exist:
+
+* `r` → error
+* `w` → creates file
+
+---
+
+🧪 Practice Tasks
+
+1. Open a file in read mode
+2. Try opening non-existing file → observe error
+3. Use write mode to create file
+
+---
+
+📖 3. Reading a File
+
+🔹 Read Entire Content
+
+python id="jo0kxm"
+file = open("test.txt", "r")
+print(file.read())
+file.close()
+
+
+---
+
+🔹 Read Line by Line
+
+python id="ybab92"
+file = open("test.txt", "r")
+print(file.readline())
+file.close()
+
+
+---
+
+🧠 Key Concept
+
+👉 File pointer moves forward after reading
+
+---
+
+🧪 Practice Tasks
+
+1. Read full file
+2. Read first line only
+3. Try reading again without reopening
+
+---
+
+✍️ 4. Writing to a File
+
+📖 Write Mode
+
+python id="mn95u2"
+file = open("test.txt", "w")
+file.write("Hello Python")
+file.close()
+
+
+---
+
+🧠 Important
+
+👉 Overwrites existing content
+
+---
+
+🧪 Practice Tasks
+
+1. Write your name
+2. Write multiple lines
+3. Re-run code and observe overwrite
+
+---
+
+➕ 5. Appending to File
+
+📖 Append Mode
+
+python id="npawgl"
+file = open("test.txt", "a")
+file.write("\nNew Line")
+file.close()
+
+
+---
+
+🧠 Difference
+
+* `w` → replaces content
+* `a` → adds content
+
+---
+
+🧪 Practice Tasks
+
+1. Append new line
+2. Append multiple entries
+3. Compare with write mode
+
+---
+
+✅ 6. Best Practice – Using `with`
+
+📖 Definition
+
+Automatically closes file
+
+---
+
+Example
+
+python id="ymr76t"
+with open("test.txt", "r") as file:
+    print(file.read())
+
+
+---
+
+🧠 Why Important
+
+* Prevents memory leaks
+* Cleaner code
+
+---
+
+🧪 Practice Tasks
+
+1. Read file using `with`
+2. Write using `with`
+3. Observe no need for `close()`
+
+---
+
+📊 7. Working with Multiple Lines
+
+python id="wyw9bt"
+with open("test.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)
+
+
+---
+
+🧠 Output
+
+* Returns list of lines
+
+---
+
+🧪 Practice Tasks
+
+1. Count number of lines
+2. Print each line using loop
+
+---
+
+⚠️ 8. Exception Handling
+
+---
+
+📖 Definition
+
+Exception handling is used to handle runtime errors and prevent program crash
+
+---
+
+🧠 Why Needed
+
+Errors stop execution
+
+Example:
+
+python id="3b9r6t"
+print(10 / 0)
+
+
+---
+
+📌 9. Try-Except
+
+python id="u3d1hf"
+try:
+    print(10 / 0)
+except:
+    print("Error occurred")
+
+
+---
+
+🧠 Flow
+
+1. Try block runs
+2. If error → except runs
+3. Program continues
+
+---
+
+🧪 Practice Tasks
+
+1. Handle division by zero
+2. Handle invalid input
+3. Add multiple try blocks
+
+---
+
+🎯 10. Specific Exceptions
+
+📖 Why Specific?
+
+To handle different errors differently
+
+---
+
+Example
+
+python id="7zrw4k"
+try:
+    x = int("abc")
+except ValueError:
+    print("Invalid number")
+
+
+---
+
+Common Exceptions
+
+| Exception         | Meaning          |
+| ----------------- | ---------------- |
+| ValueError        | Wrong data type  |
+| ZeroDivisionError | Division by zero |
+| FileNotFoundError | File not found   |
+
+---
+
+🧪 Practice Tasks
+
+1. Handle ValueError
+2. Handle FileNotFoundError
+3. Use multiple except blocks
+
+---
+
+🔄 11. Finally Block
+
+📖 Definition
+
+Always executes (error or not)
+
+---
+
+Example
+
+python id="dqtnf7"
+try:
+    print(10 / 2)
+except:
+    print("Error")
+finally:
+    print("Always runs")
+
+
+---
+
+🧠 Use Case
+
+* Closing resources
+* Cleanup tasks
+
+---
+
+🧪 Practice Tasks
+
+1. Add finally block
+2. Print message in finally
+3. Combine with file handling
+
+---
+
+🔁 12. Else Block (Optional)
+
+📖 Definition
+
+Runs only if no error
+
+---
+
+Example
+
+python id="4q2ix9"
+try:
+    print(10 / 2)
+except:
+    print("Error")
+else:
+    print("No error")
+
+
+---
+
+🧠 Flow
+
+* Try → success → else
+* Try → error → except
+
+---
+
+🧪 Practice Tasks
+
+1. Add else block
+2. Test with valid and invalid input
+
+---
+
+🧠 13. Real-World Use Cases
+
+* File reading safely
+* User input validation
+* API handling
+* Prevent crashes
+
+---
+
+🎯 14. Mini Project (End of Day)
+
+📌 Task: User Data Logger
+
+Features:
+
+* Take user input (name, age)
+* Save to file
+* Handle errors (invalid input, file issues)
+* Display stored data
+
+---
+
+🧠 Outcome
+
+* Strong file handling
+* Error handling mastery
+* Real-world implementation
+
+---
+
+🚀 End of Day Outcome
+
+✔ Understand file operations
+✔ Handle runtime errors
+✔ Write safe programs
+✔ Ready for OOP next

@@ -1,15 +1,4 @@
-You’re **100% right** 👍 — good catch.
-In the **Indexing section**, a few commands **don’t naturally return “result data”**, but for **teaching students**, we *must still show*:
-
-* ✅ command output (shell response)
-* ✅ query result output
-* ✅ explain output where applicable
-
-So below I’m **FIXING that properly**, in the **same format**, **without cutting anything**, and **adding the missing outputs** clearly.
-
----
-
- 🔥 MongoDB INDEXING — FULL CODE + OUTPUT + EXPLANATION (FIXED)
+🔥 MongoDB INDEXING — FULL CODE + OUTPUT + EXPLANATION (FIXED)
 
 ---
 
